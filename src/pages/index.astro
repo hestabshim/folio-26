@@ -1,0 +1,137 @@
+---
+import backgroundImage from "/public/website background.png";
+import { Image } from "astro:assets";
+import "../styles/main.css";
+import Sheep from "/public/anim.gif";
+import SheepImage from "/public/anim.png";
+import SheepEat from "/public/eat.gif";
+import SheepClipPath from "/public/package-lock.svg";
+import Project from "../components/project.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+	<meta name="description" content="amber zeng's personal portfolio, a designer and programmer who loves whimsy">
+	<meta name="keywords" content="portfolio, amber, zeng, amber zeng, fun">
+	<meta name="author" content="amber zeng">
+    <link rel="preload" as="image" href={Sheep.src} />
+    <link rel="preload" as="image" href={SheepImage.src} />
+    <link rel="preload" as="image" href={SheepEat.src} />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>amber's portfolio</title>
+  </head>
+  <body>
+    <section class="introduction">
+      <div class="greeting">
+        <h1>amber zeng</h1>
+        <h1 class="ada-hidden">amber</h1>
+        <!-- <span><img class="name" src="/handwrite.png" /></span> -->
+      </div>
+      <h2 class="subheading">designer and programmer</h2>
+      <h2 class="desc">currently studying @ purdue</h2>
+    </section>
+
+	<a>about me</a>
+	<a>projects</a>
+	<a>contact</a>
+	<a>other stuff...</a>
+  
+    <section class="projects-gallery" aria-label="Projects gallery">
+      <h2 class="your-mom">
+		hi! welcome to my corner of the web.
+		<br>
+        some of my projects are below! browse as you please.
+      </h2>
+      <div class="gallery-grid">
+		<Project></Project>
+      </div>
+    </section>
+
+  <!-- <svg
+      style="position:absolute; bottom: 0; right:0; border-style:solid; border-color: black; border-width: 1px; pointer-events:none; "
+      width="1097"
+      height="805"
+      viewBox="0 0 1097 805"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g transform="translate(-233.35905,-302.96984)">
+        <g transform="translate(-380.192392,-872.609257)">
+          <path style="bottom: 0; right:0; border-style:solid; border-color: black; border-width: 1px;"
+            id="sheep-boundary-path"
+            d="M815.199,2443.398L1911.704,2443.278L1911.625,1639.246C1445.816,1796.213 1082.946,2074.662 815.199,2443.398Z"
+            style="fill:none; stroke:none; visibility:hidden;"></path>
+        </g>
+      </g>
+    </svg> -->
+  <svg
+    style="position:absolute; left: 20%; bottom: 6%; pointer-events:none; "
+    width="110%"
+    height="110%"
+    viewBox="0 0 1700 1226"
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xml:space="preserve"
+  >
+    <g transform="matrix(1,0,0,1,-233.35905,-302.96984)">
+      <g transform="matrix(1,0,0,1,-380.192392,-872.609257)">
+        <path
+          id="sheep-boundary-path"
+          d="M815.199,2443.398L1911.704,2443.278L1911.625,1639.246C1445.816,1796.213 1082.946,2074.662 815.199,2443.398Z"
+          style="visibility:hidden"></path>
+      </g>
+    </g>
+  </svg>
+  <Image
+    class="sheep-image"
+    data-still-src={SheepImage.src}
+    data-eat-src={SheepEat.src}
+    width={50}
+    src={Sheep}
+    alt="sheep"
+  />
+  <Image
+    class="sheep-image"
+    data-still-src={SheepImage.src}
+    data-eat-src={SheepEat.src}
+    width={50}
+    src={Sheep}
+    alt="sheep"
+  />
+  <Image
+    class="sheep-image"
+    data-still-src={SheepImage.src}
+    data-eat-src={SheepEat.src}
+    width={50}
+    src={Sheep}
+    alt="sheep"
+  />
+  <Image
+    class="sheep-image"
+    data-still-src={SheepImage.src}
+    data-eat-src={SheepEat.src}
+    width={50}
+    src={Sheep}
+    alt="sheep"
+  />
+  <Image
+    class="sheep-image"
+    data-still-src={SheepImage.src}
+    data-eat-src={SheepEat.src}
+    width={50}
+    src={Sheep}
+    alt="sheep"
+  />
+  <Image
+    class="background-image"
+    src={backgroundImage}
+    alt={"background image"}
+  />
+  <p class="footer">built with vitamin water and <a href="https://astro.build/">astro</a></p>
+  <script type="module" src="/src/function/sheep.ts"></script>
+</body>
+</html>
