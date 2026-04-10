@@ -48,6 +48,10 @@ h2 {
   width: 500px;
   height: auto;
 }
+.centered {
+    width:100vw;
+    height:100vh;
+}
 .desc {
   padding-left: 40px;
 }

@@ -8,6 +8,8 @@ import SheepEat from "../assets/eat.gif";
 import Project from "../components/project.astro";
 import Layout from "../layouts/Layout.astro";
 import Bento from "../assets/bento.png";
+import Spill from "../assets/spill.png";
+import Butterfly from "../assets/butterfly.webp";
 ---
 
 <Layout>
@@ -41,7 +43,7 @@ import Bento from "../assets/bento.png";
     <div class="gallery-grid">
       <Project>
         <p class="b-h" slot="name">bento website</p>
-        <a slot="video" href="https://bento.purduehackers.com"
+        <a slot="video" href="https://bento.purduehackers.com" rel="noreferrer noopener" target="_blank"
           ><Image
             slot="video"
             class="bento-thumbnail"
@@ -53,24 +55,24 @@ import Bento from "../assets/bento.png";
       </Project>
       <Project>
         <p class="b-h" slot="name">spill website</p>
-        <a slot="video" href="https://spill.purduehackers.com"
+        <a slot="video" href="https://spill.purduehackers.com" rel="noreferrer noopener" target="_blank"
           ><Image
             slot="video"
             class="bento-thumbnail"
             width={0}
-            src={Bento}
+            src={Spill}
             alt="thumbnail of a bright blue website with a design that feels inspired by bento boxes"
           /></a
         >
       </Project>
       <Project>
         <p class="b-h" slot="name">virtual butterfly garden</p>
-        <a slot="video" href="https://bento.purduehackers.com"
+        <a slot="video" href="/soon" rel="noreferrer noopener" target="_blank"
           ><Image
             slot="video"
             class="bento-thumbnail"
             width={0}
-            src={Bento}
+            src={Butterfly}
             alt="thumbnail of a bright blue website with a design that feels inspired by bento boxes"
           /></a
         >
