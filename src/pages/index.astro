@@ -1,75 +1,99 @@
 ---
-import backgroundImage from "/public/website background.png";
+import backgroundImage from "../assets/website background.png";
 import { Image } from "astro:assets";
 import "../styles/main.css";
-import Sheep from "/public/anim.gif";
-import SheepImage from "/public/anim.png";
-import SheepEat from "/public/eat.gif";
-import SheepClipPath from "/public/package-lock.svg";
+import Sheep from "../assets/anim.gif";
+import SheepImage from "../assets/anim.png";
+import SheepEat from "../assets/eat.gif";
 import Project from "../components/project.astro";
+import Layout from "../layouts/Layout.astro";
+import Bento from "../assets/bento.png";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-	<meta name="description" content="amber zeng's personal portfolio, a designer and programmer who loves whimsy">
-	<meta name="keywords" content="portfolio, amber, zeng, amber zeng, fun">
-	<meta name="author" content="amber zeng">
-    <link rel="preload" as="image" href={Sheep.src} />
-    <link rel="preload" as="image" href={SheepImage.src} />
-    <link rel="preload" as="image" href={SheepEat.src} />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>amber's portfolio</title>
-  </head>
-  <body>
-    <section class="introduction">
+<Layout>
+  <link slot="head" rel="preload" as="image" href={Sheep.src} />
+  <link slot="head" rel="preload" as="image" href={SheepImage.src} />
+  <link slot="head" rel="preload" as="image" href={SheepEat.src} />
+
+  <section class="introduction">
+    <div class="header">
       <div class="greeting">
         <h1>amber zeng</h1>
         <h1 class="ada-hidden">amber</h1>
         <!-- <span><img class="name" src="/handwrite.png" /></span> -->
       </div>
-      <h2 class="subheading">designer and programmer</h2>
-      <h2 class="desc">currently studying @ purdue</h2>
-    </section>
-
-	<a>about me</a>
-	<a>projects</a>
-	<a>contact</a>
-	<a>other stuff...</a>
-  
-    <section class="projects-gallery" aria-label="Projects gallery">
-      <h2 class="your-mom">
-		hi! welcome to my corner of the web.
-		<br>
-        some of my projects are below! browse as you please.
-      </h2>
-      <div class="gallery-grid">
-		<Project>
-			<p slot="name"></p>
-			<a><img></a>
-		</Project>
+      <div class="nav">
+        <a href="/about">about me</a>
+        <a href="mailto:amberzengwork@gmail.com">contact</a>
+        <a href="/soon">playground</a>
       </div>
-    </section>
+    </div>
+    <h2 class="subheading">designer and programmer</h2>
+    <h2 class="desc">currently studying @ purdue</h2>
+  </section>
+
+  <section class="projects-gallery" aria-label="Projects gallery">
+    <h2 class="your-mom">
+      hi! welcome to my corner of the web.
+      <br />
+      some of my projects are below! browse as you please.
+    </h2>
+    <div class="gallery-grid">
+      <Project>
+        <p class="b-h" slot="name">bento website</p>
+        <a slot="video" href="https://bento.purduehackers.com"
+          ><Image
+            slot="video"
+            class="bento-thumbnail"
+            width={0}
+            src={Bento}
+            alt="thumbnail of a bright blue website with a design that feels inspired by bento boxes"
+          /></a
+        >
+      </Project>
+      <Project>
+        <p class="b-h" slot="name">spill website</p>
+        <a slot="video" href="https://spill.purduehackers.com"
+          ><Image
+            slot="video"
+            class="bento-thumbnail"
+            width={0}
+            src={Bento}
+            alt="thumbnail of a bright blue website with a design that feels inspired by bento boxes"
+          /></a
+        >
+      </Project>
+      <Project>
+        <p class="b-h" slot="name">virtual butterfly garden</p>
+        <a slot="video" href="https://bento.purduehackers.com"
+          ><Image
+            slot="video"
+            class="bento-thumbnail"
+            width={0}
+            src={Bento}
+            alt="thumbnail of a bright blue website with a design that feels inspired by bento boxes"
+          /></a
+        >
+      </Project>
+    </div>
+  </section>
 
   <!-- <svg
-      style="position:absolute; bottom: 0; right:0; border-style:solid; border-color: black; border-width: 1px; pointer-events:none; "
-      width="1097"
-      height="805"
-      viewBox="0 0 1097 805"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g transform="translate(-233.35905,-302.96984)">
-        <g transform="translate(-380.192392,-872.609257)">
-          <path style="bottom: 0; right:0; border-style:solid; border-color: black; border-width: 1px;"
-            id="sheep-boundary-path"
-            d="M815.199,2443.398L1911.704,2443.278L1911.625,1639.246C1445.816,1796.213 1082.946,2074.662 815.199,2443.398Z"
-            style="fill:none; stroke:none; visibility:hidden;"></path>
-        </g>
-      </g>
-    </svg> -->
+	style="position:absolute; bottom: 0; right:0; border-style:solid; border-color: black; border-width: 1px; pointer-events:none; "
+	width="1097"
+	height="805"
+	viewBox="0 0 1097 805"
+	xmlns="http://www.w3.org/2000/svg"
+  >
+	<g transform="translate(-233.35905,-302.96984)">
+	  <g transform="translate(-380.192392,-872.609257)">
+		<path style="bottom: 0; right:0; border-style:solid; border-color: black; border-width: 1px;"
+		  id="sheep-boundary-path"
+		  d="M815.199,2443.398L1911.704,2443.278L1911.625,1639.246C1445.816,1796.213 1082.946,2074.662 815.199,2443.398Z"
+		  style="fill:none; stroke:none; visibility:hidden;"></path>
+	  </g>
+	</g>
+  </svg> -->
   <svg
     style="position:absolute; left: 20%; bottom: 6%; pointer-events:none; "
     width="110%"
@@ -93,7 +117,7 @@ import Project from "../components/project.astro";
     class="sheep-image"
     data-still-src={SheepImage.src}
     data-eat-src={SheepEat.src}
-    width={50}
+    width={75}
     src={Sheep}
     alt="sheep"
   />
@@ -101,7 +125,7 @@ import Project from "../components/project.astro";
     class="sheep-image"
     data-still-src={SheepImage.src}
     data-eat-src={SheepEat.src}
-    width={50}
+    width={75}
     src={Sheep}
     alt="sheep"
   />
@@ -109,7 +133,7 @@ import Project from "../components/project.astro";
     class="sheep-image"
     data-still-src={SheepImage.src}
     data-eat-src={SheepEat.src}
-    width={50}
+    width={75}
     src={Sheep}
     alt="sheep"
   />
@@ -117,7 +141,7 @@ import Project from "../components/project.astro";
     class="sheep-image"
     data-still-src={SheepImage.src}
     data-eat-src={SheepEat.src}
-    width={50}
+    width={75}
     src={Sheep}
     alt="sheep"
   />
@@ -125,7 +149,7 @@ import Project from "../components/project.astro";
     class="sheep-image"
     data-still-src={SheepImage.src}
     data-eat-src={SheepEat.src}
-    width={50}
+    width={75}
     src={Sheep}
     alt="sheep"
   />
@@ -134,9 +158,10 @@ import Project from "../components/project.astro";
     src={backgroundImage}
     alt={"background image"}
   />
-  <p class="footer">built with vitamin water and <a href="https://astro.build/">astro</a></p>
+  <p class="footer">
+    built with vitamin water and <a href="https://astro.build/">astro</a>
+  </p>
   <script>
-	import "/src/function/sheep.ts";
+    import "/src/function/sheep.ts";
   </script>
-</body>
-</html>
+</Layout>

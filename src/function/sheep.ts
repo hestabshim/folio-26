@@ -2,7 +2,7 @@ window.addEventListener("load", () => {
     const boundaryPath = document.querySelector<SVGPathElement>("#sheep-boundary-path");
     if (!boundaryPath) return;
   
-    const SHEEP_RADIUS = 25;
+    const SHEEP_RADIUS = 15;
   
     // --- Boundary ---
   
@@ -96,7 +96,7 @@ window.addEventListener("load", () => {
       let isMoving = false;
       let isEating = false;
   
-      const SPEED = 64;
+      const SPEED = 48;
       const ARRIVAL_THRESHOLD = 1;
       const GIF_SRC = element.src;
       const STILL_SRC = element.dataset.stillSrc ?? GIF_SRC;
@@ -190,7 +190,7 @@ window.addEventListener("load", () => {
         setTimeout(() => {
           if (!isMoving) element.src = STILL_SRC;
           isEating = false;
-        }, 2000);
+        }, 4000);
       }
   
       function maybeWander() {
