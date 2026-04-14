@@ -10,13 +10,14 @@ import Layout from "../layouts/Layout.astro";
 import Bento from "../assets/bento.png";
 import Spill from "../assets/spill.png";
 import Butterfly from "../assets/butterfly.webp";
+import Phone from "../components/phone.astro";
 ---
 
 <Layout>
   <link slot="head" rel="preload" as="image" href={Sheep.src} />
   <link slot="head" rel="preload" as="image" href={SheepImage.src} />
   <link slot="head" rel="preload" as="image" href={SheepEat.src} />
-
+  <canvas hidden width="32" height="32"></canvas>
   <section class="introduction">
     <div class="header">
       <div class="greeting">
@@ -26,7 +27,8 @@ import Butterfly from "../assets/butterfly.webp";
       </div>
       <div class="nav">
         <a href="/about">about me</a>
-        <a href="mailto:amberzengwork@gmail.com">contact</a>
+        <a href="mailto:amberzengwork@gmail.com"><Phone /></a>
+
         <a href="/soon">playground</a>
       </div>
     </div>
@@ -43,7 +45,11 @@ import Butterfly from "../assets/butterfly.webp";
     <div class="gallery-grid">
       <Project>
         <p class="b-h" slot="name">bento website</p>
-        <a slot="video" href="https://bento.purduehackers.com" rel="noreferrer noopener" target="_blank"
+        <a
+          slot="video"
+          href="https://bento.purduehackers.com"
+          rel="noreferrer noopener"
+          target="_blank"
           ><Image
             slot="video"
             class="bento-thumbnail"
@@ -55,7 +61,11 @@ import Butterfly from "../assets/butterfly.webp";
       </Project>
       <Project>
         <p class="b-h" slot="name">spill website</p>
-        <a slot="video" href="https://spill.purduehackers.com" rel="noreferrer noopener" target="_blank"
+        <a
+          slot="video"
+          href="https://spill.purduehackers.com"
+          rel="noreferrer noopener"
+          target="_blank"
           ><Image
             slot="video"
             class="bento-thumbnail"
@@ -165,5 +175,28 @@ import Butterfly from "../assets/butterfly.webp";
   </p>
   <script>
     import "/src/function/sheep.ts";
+  </script>
+  <script>
+    const viewers = document.querySelectorAll("model-viewer");
+    if (!viewers.length) {
+      throw new Error("Missing element");
+    }
+    function hi(event) {
+      if (typeof event.currentTarget.play === "function") {
+        event.currentTarget.play({ repetitions: 1, pingpong: false });
+      }
+    }
+    function bye(event) {
+      if (typeof event.currentTarget.pause === "function") {
+        event.currentTarget.pause();
+        if ("currentTime" in event.currentTarget) {
+          event.currentTarget.currentTime = 0;
+        }
+      }
+    }
+    viewers.forEach((viewer) => {
+      viewer.addEventListener("mouseover", hi);
+      viewer.addEventListener("mouseout", bye);
+    });
   </script>
 </Layout>

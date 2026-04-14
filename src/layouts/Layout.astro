@@ -2,8 +2,14 @@
   <head>
     <slot name="head" />
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/egg.gif" /> -->
+    <link
+      id="icon"
+      rel="icon"
+      type="image/webp"
+      href="src/assets/icon/frame_000.webp"
+      id="icon"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="" />
     <meta property="og:description" content="" />
@@ -15,5 +21,25 @@
 
   <body>
     <slot />
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const canvas = document.querySelector("canvas");
+        const context = canvas && canvas instanceof HTMLCanvasElement ? canvas.getContext("2d") : null;
+       for (let i =0; i< 152; i++) {
+        document.querySelector("#icon")
+       }
+        function iconChange() {
+          const icon = document.getElementById("icon");
+          if (!(icon instanceof HTMLLinkElement)) 
+          
+          return;   
+        }
+
+        if (context) {
+          setInterval(iconChange, 333);
+        }
+      });
+ 
+    </script>
   </body>
 </html>
