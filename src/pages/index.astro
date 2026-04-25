@@ -3,6 +3,7 @@ import backgroundImage from "../assets/website background.png";
 import { Image } from "astro:assets";
 import "../styles/main.css";
 import Sheep from "../assets/anim.gif";
+import "../assets/anim.gif";
 import SheepImage from "../assets/anim.png";
 import SheepEat from "../assets/eat.gif";
 import Project from "../components/project.astro";
@@ -11,6 +12,7 @@ import Bento from "../assets/bento.png";
 import Spill from "../assets/spill.png";
 import Butterfly from "../assets/butterfly.webp";
 import Phone from "../components/phone.astro";
+import House from "../components/house.astro";
 ---
 
 <Layout>
@@ -20,16 +22,17 @@ import Phone from "../components/phone.astro";
   <canvas hidden width="32" height="32"></canvas>
   <section class="introduction">
     <div class="header">
+      
       <div class="greeting">
         <h1>amber zeng</h1>
-        <h1 class="ada-hidden">amber</h1>
+        
         <!-- <span><img class="name" src="/handwrite.png" /></span> -->
       </div>
       <div class="nav">
-        <a href="/about">about me</a>
-        <a href="mailto:amberzengwork@gmail.com"><Phone /></a>
+       
+        
 
-        <a href="/soon">playground</a>
+        <!-- <a href="/soon">playground</a> -->
       </div>
     </div>
     <h2 class="subheading">designer and programmer</h2>
@@ -170,9 +173,16 @@ import Phone from "../components/phone.astro";
     src={backgroundImage}
     alt={"background image"}
   />
-  <p class="footer">
-    built with vitamin water and <a href="https://astro.build/">astro</a>
-  </p>
+  <a href="/about" target="_blank"><House/></a>
+  <a href="mailto:amberzengwork@gmail.com"><Phone /></a>
+  <div class="footer">
+    <a href="https://ring.purduehackers.com/previous">Previous</a>
+    <a href="https://ring.purduehackers.com/">Purdue Hackers webring</a>
+    <a href="https://ring.purduehackers.com/next">Next</a>
+    <p>
+      built with vitamin water and <a href="https://astro.build/">astro</a>
+    </p>
+  </div>
   <script>
     import "/src/function/sheep.ts";
   </script>

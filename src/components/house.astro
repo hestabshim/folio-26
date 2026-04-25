@@ -1,0 +1,17 @@
+<img
+id="house"
+src="/house.webp"
+alt="hi"
+class="house"
+/>
+<script>
+    
+    const element = document.getElementById("house") as HTMLImageElement;
+    element.addEventListener("mouseover", (event: MouseEvent) => {
+      element.src="/house-open.webp";
+    });
+    element.addEventListener("mouseleave", (event:MouseEvent) => {
+     element.src = "/house.webp";
+     
+    });
+  </script>

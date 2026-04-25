@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import Phone from "../assets/Phone.webp";
+import Up from "../assets/Phone-up.webp";
+---
 <html lang="en">
   <head>
     <slot name="head" />
@@ -8,7 +13,6 @@
       rel="icon"
       type="image/webp"
       href="src/assets/icon/frame_000.webp"
-      id="icon"
     />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="" />
@@ -20,26 +24,8 @@
   </head>
 
   <body>
+   
     <slot />
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        const canvas = document.querySelector("canvas");
-        const context = canvas && canvas instanceof HTMLCanvasElement ? canvas.getContext("2d") : null;
-       for (let i =0; i< 152; i++) {
-        document.querySelector("#icon")
-       }
-        function iconChange() {
-          const icon = document.getElementById("icon");
-          if (!(icon instanceof HTMLLinkElement)) 
-          
-          return;   
-        }
-
-        if (context) {
-          setInterval(iconChange, 333);
-        }
-      });
- 
-    </script>
+   
   </body>
 </html>

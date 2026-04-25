@@ -1,19 +1,13 @@
-<model-viewer
-  loading="eager"
-  className="phone"
-  auto-rotate
-  rotation-per-second="0deg"
-  src="Phone.glb"
-  interaction-prompt="none"
-  scale="0.5 0.5 0.5"
-  disable-tap
-  disable-pan
-  disable-zoom
-  exposure={0.9}
-  orientation="0deg 20deg 270deg"
->
-</model-viewer>
-<script
-  type="module"
-  src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-></script>
+<div class="phone-container">
+  <img id="phone" class="phone" src="/Phone.webp" alt="hi" />
+</div>
+
+<script>
+  const element = document.getElementById("phone") as HTMLImageElement;
+  element.addEventListener("mouseover", (event: MouseEvent) => {
+    element.src = "/Phone-up.webp";
+  });
+  element.addEventListener("mouseleave", (event: MouseEvent) => {
+    element.src = "/Phone.webp";
+  });
+</script>

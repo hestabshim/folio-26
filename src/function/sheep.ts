@@ -2,9 +2,9 @@ window.addEventListener("load", () => {
     const boundaryPath = document.querySelector<SVGPathElement>("#sheep-boundary-path");
     if (!boundaryPath) return;
   
-    const SHEEP_RADIUS = 15;
+    const SHEEP_RADIUS = 20;
   
-    // --- Boundary ---
+    // boundaries
   
     function getPointsFromPath(
       pathElement: SVGPathElement,
@@ -82,7 +82,7 @@ window.addEventListener("load", () => {
       return [x, y];
     }
   
-    // --- Sheep factory ---
+    // sheep manufacturing
   
     const sheepInstances: ReturnType<typeof createSheep>[] = [];
   
@@ -152,9 +152,22 @@ window.addEventListener("load", () => {
           });
   
           if (blocked) {
-            // Keep ticking so sheep resumes when path clears
+            //collision logic
+            const headingX = targetX - currentX;
+            const headingY = targetY - currentY;
+            const newTargetX = currentX - headingX;
+            const newTargetY = currentY - headingY;
+            //stay inside boundary. jail
+            const [clampedX, clampedY] = isInsideBoundary(newTargetX, newTargetY)
+              ? [newTargetX, newTargetY]
+              : clampToBoundary(newTargetX, newTargetY);
+          
+            targetX = clampedX;
+            targetY = clampedY;
+            setDirection(targetX);
             animationFrameId = requestAnimationFrame(tick);
-          } else {
+          }
+         else {
             currentX = nextX;
             currentY = nextY;
             element.style.left = `${currentX}px`;
@@ -192,7 +205,7 @@ window.addEventListener("load", () => {
           isEating = false;
         }, 4000);
       }
-  
+      //they alive.
       function maybeWander() {
         if (isMoving || isEating) return;
         if (Math.random() > 0.3) return;
@@ -229,7 +242,7 @@ window.addEventListener("load", () => {
       };
     }
   
-    // --- Init all sheep ---
+    // all sheep initialized
   
     document.querySelectorAll<HTMLImageElement>(".sheep-image").forEach((el) => {
       sheepInstances.push(createSheep(el, Math.random() > 0.5));
