@@ -12,6 +12,8 @@ import Bento from "../assets/bento.png";
 import Spill from "../assets/spill.png";
 import Butterfly from "../assets/butterfly.webp";
 import Phone from "../components/phone.astro";
+import Logo from "../assets/glider.svg";
+
 // import House from "../components/house.astro";
 ---
 
@@ -22,12 +24,12 @@ import Phone from "../components/phone.astro";
   <canvas hidden width="32" height="32"></canvas>
   <section class="introduction">
     <div class="header">
-      
       <div class="greeting">
         <h1>amber zeng</h1>
-        <a class="phone-link" href="mailto:amberzengwork@gmail.com"><Phone /></a>
+        <a class="phone-link" href="mailto:amberzengwork@gmail.com"><Phone /></a
+        >
         <p class="visibility">amberzengwork@gmail.com</p>
-        
+
         <!-- <span><img class="name" src="/handwrite.png" /></span> -->
       </div>
       <!-- <div class="nav">
@@ -39,16 +41,32 @@ import Phone from "../components/phone.astro";
     </div>
     <h2 class="subheading">designer and programmer</h2>
     <h2 class="desc">currently studying @ purdue</h2>
-    <div class="webring-links">
-      <a href="https://ring.purduehackers.com/previous">Previous</a>
-      <a href="https://ring.purduehackers.com/">Purdue Hackers webring</a>
-      <a href="https://ring.purduehackers.com/next">Next</a>
+    <div
+      style="align-items: center;
+    padding-left: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;"
+    >
+      <a
+        style="text-decoration: none; color:black; font-size:30px;"
+        href="https://ring.purduehackers.com/previous"
+      >
+        ☜
+      </a>
+      <a href="https://ring.purduehackers.com/"><Logo width={50} /></a>
+      <a
+        style="text-decoration: none; color:black; font-size:30px;"
+        href="https://ring.purduehackers.com/previous"
+      >
+        ☞
+      </a>
     </div>
   </section>
 
   <section class="projects-gallery" aria-label="Projects gallery">
     <h2 class="your-mom">
-      hi! welcome to my corner of the web.
+      hi! welcome to my page.
       <br />
       some of my projects are below! browse as you please.
     </h2>
@@ -99,7 +117,11 @@ import Phone from "../components/phone.astro";
       </Project>
       <Project>
         <p class="b-h" slot="name">mewtual (designathon project)</p>
-        <a slot="video" href="https://devpost.com/software/project-8i6wat" rel="noreferrer noopener" target="_blank"
+        <a
+          slot="video"
+          href="https://devpost.com/software/project-8i6wat"
+          rel="noreferrer noopener"
+          target="_blank"
           ><Image
             slot="video"
             class="bento-thumbnail"

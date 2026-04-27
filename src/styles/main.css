@@ -10,23 +10,23 @@
 
 body {
   background-color: rgb(255, 239, 213);
-  overflow: hidden;
-  width: 100vw;
   height: 100vh;
-  position: relative;
   margin: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
 }
 h1 {
+  font-family: polysans;
+  font-size: 10vw;
   margin: 0;
-  padding-top: 20px;
   padding-bottom: -10px;
   padding-left: 40px;
-  font-size: 10vw;
-  font-family: polysans;
+  padding-top: 20px;
 }
 h2 {
-  margin: 0;
   font-family: polysans-slim;
+  margin: 0;
 }
 .ada-hidden {
   display: none;
@@ -37,37 +37,37 @@ h2 {
   margin: 0;
 }
 .background-image {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  pointer-events: none;
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   z-index: 1;
-  pointer-events: none;
 }
 .bento-thumbnail {
-  width: 560px;
   height: auto;
+  width: 560px;
 }
 .centered {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
 }
 .desc {
   padding-left: 40px;
 }
 .footer {
-  color: white;
-  padding: 20px;
-  position: absolute;
-  z-index: 3;
   bottom: 0;
-  right: 0;
-  margin: 0;
+  color: white;
   font-family: polysans-slim;
   font-size: 1rem;
   line-height: 1.45;
+  margin: 0;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  z-index: 3;
 }
 .footer a {
   color: white;
@@ -75,47 +75,47 @@ h2 {
   
 }
 .header {
-  width: 100%;
   height: 20vh;
+  width: 100%;
 }
 .house {
-  width: 11vw;
-  position: absolute;
-  z-index: 1;
-  top: 20%;
   left: 87%;
+  position: absolute;
+  top: 20%;
+  width: 11vw;
+  z-index: 1;
 }
 .name {
-  width: 30vw;
   padding: 9%;
+  width: 30vw;
 }
 .nav {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10vh;
   align-self: center;
+  padding: 10vh;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .nav a {
+  color: green;
   font-family: polysans-slim;
   padding-right: 10px;
-  color: green;
 }
 .sheep-image {
   position: absolute;
   z-index: 3;
 }
 .phone {
-  width: 7vw;
-  position: absolute;
   bottom: 0;
+  position: absolute;
+  width: 7vw;
 }
 .phone-container {
-  width: 5vw;
-  position: absolute;
-  z-index: 1;
-  top: 15%;
   left: 90%;
+  position: absolute;
+  top: 15%;
+  width: 5vw;
+  z-index: 1;
 }
 #sheep {
   display: none;
@@ -132,15 +132,15 @@ h2 {
   flex-direction: row;
 }
 .projects-gallery {
-  padding-top: 30px;
   padding-left: 40px;
+  padding-top: 30px;
 }
 .gallery-grid {
-  width: 58%;
-  height: 64vh;
   display: flex;
   flex-direction: column;
+  height: 64vh;
   overflow-y: auto;
+  width: 58%;
 }
 .gallery-grid::-webkit-scrollbar {
   display: none;
@@ -156,10 +156,10 @@ h2 {
   padding-bottom: 20px;
 }
 .visibility {
+  font-family: polysans-slim;
+  left: 85%;
   position: absolute;
   top: 15%;
-  left: 85%;
-  font-family: polysans-slim;
 }
 .gallery-video-tile {
   padding: 20px;
@@ -168,78 +168,78 @@ h2 {
   color: inherit;
 }
 .sheep-scene {
-  position: absolute;
-  right: 0;
   bottom: -6vh;
-  width: 100vw;
   height: 100vh;
   pointer-events: none;
+  position: absolute;
+  right: 0;
+  width: 100vw;
 }
 .sheep-boundary {
-  position: absolute;
-  left: 20%;
   bottom: 0;
-  width: 110%;
   height: 110%;
+  left: 20%;
   pointer-events: none;
+  position: absolute;
+  width: 110%;
 }
 
 @media (max-width: 28rem) {
   body {
+    height: auto;
+    min-height: 100svh;
     overflow-x: hidden;
     overflow-y: auto;
     width: 100%;
-    min-height: 100svh;
-    height: auto;
   }
 
   h1 {
-    padding-top: clamp(1rem, 3vw, 1.5rem);
-    padding-left: clamp(1rem, 4vw, 1.5rem);
-    padding-bottom: 0;
     font-size: clamp(3rem, 18vw, 4.5rem);
     line-height: 0.92;
+    padding-bottom: 0;
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-top: clamp(1rem, 3vw, 1.5rem);
   }
 
   .background-image {
-    position: absolute;
     inset: 0;
+    position: absolute;
     z-index: 1;
   }
 
   .bento-thumbnail {
-    width: 100%;
-    max-width: 100%;
     display: block;
+    max-width: 100%;
+    width: 100%;
   }
 
   .centered {
-    width: 100%;
-    min-height: 100svh;
     height: auto;
+    min-height: 100svh;
+    width: 100%;
   }
 
   .desc {
-    padding-left: clamp(1rem, 4vw, 1.5rem);
     font-size: clamp(1rem, 4.4vw, 1.15rem);
+    padding-left: clamp(1rem, 4vw, 1.5rem);
   }
 
   .footer {
-    padding: clamp(1rem, 4vw, 1.25rem);
-    position: relative;
-    z-index: 10;
     bottom: auto;
-    right: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
     gap: 0.5rem 0.75rem;
+    justify-content: flex-start;
+    padding: clamp(1rem, 4vw, 1.25rem);
+    position: relative;
+    right: auto;
+    z-index: 10;
   }
 
   .footer p {
     margin: 0;
-    width: 100%;
     text-align: left;
+    width: 100%;
   }
 
   .header {
@@ -248,21 +248,21 @@ h2 {
   }
 
   .phone {
-    width: 100%;
-    height: auto;
     display: block;
+    height: auto;
+    width: 100%;
   }
 
   .phone-container {
-    width: clamp(2.75rem, 12vw, 3.5rem);
-    position: relative;
-    z-index: 10;
-    top: auto;
     bottom: auto;
     left: auto;
-    right: auto;
     margin-left: auto;
     margin-top: clamp(0.5rem, 3vw, 0.75rem);
+    position: relative;
+    right: auto;
+    top: auto;
+    width: clamp(2.75rem, 12vw, 3.5rem);
+    z-index: 10;
   }
 
   .phone-link {
@@ -280,44 +280,44 @@ h2 {
   }
 
   .greeting {
+    align-items: flex-start;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
     gap: 0.5rem 0.75rem;
+    justify-content: space-between;
   }
 
   .projects-gallery {
+    padding: 1rem clamp(1rem, 4vw, 1.5rem) clamp(2rem, 6vw, 3rem);
     position: relative;
     z-index: 10;
-    padding: 1rem clamp(1rem, 4vw, 1.5rem) clamp(2rem, 6vw, 3rem);
   }
 
   .gallery-grid {
-    width: 100%;
+    gap: 1rem;
     height: auto;
     max-height: none;
-    gap: 1rem;
     overflow: visible;
     padding-right: 0;
+    width: 100%;
   }
 
   .your-mom {
-    padding-bottom: 1rem;
     font-size: clamp(1rem, 4.6vw, 1.15rem);
     line-height: 1.35;
+    padding-bottom: 1rem;
   }
 
   .visibility {
+    font-size: clamp(0.95rem, 4vw, 1.05rem);
+    left: auto;
+    margin-bottom: 1.35rem;
+    margin-top: 0.9rem;
+    padding-left: clamp(1rem, 4vw, 1.5rem);
     position: relative;
     top: auto;
-    left: auto;
     width: 100%;
-    margin-top: 0.9rem;
-    margin-bottom: 1.35rem;
-    padding-left: clamp(1rem, 4vw, 1.5rem);
-    font-size: clamp(0.95rem, 4vw, 1.05rem);
     z-index: 10;
   }
 
@@ -326,28 +326,35 @@ h2 {
   }
 
   .sheep-image {
-    position: absolute;
-    z-index: 3;
-    width: clamp(3.25rem, 16vw, 4.5rem);
     height: auto;
+    position: absolute;
+    width: clamp(3.25rem, 16vw, 4.5rem);
+    z-index: 3;
   }
 
   .sheep-scene {
-    position: relative;
-    inset: auto;
-    width: 100%;
     height: clamp(10rem, 42vw, 13.5rem);
+    inset: auto;
     margin-top: clamp(1rem, 4vw, 1.5rem);
     overflow: hidden;
+    position: relative;
+    width: 100%;
   }
 
   .sheep-boundary {
-    position: absolute;
-    left: -8%;
-    bottom: -42%;
-    width: 124%;
-    height: auto;
     aspect-ratio: 1700 / 1226;
+    bottom: -42%;
+    height: auto;
+    left: -8%;
+    position: absolute;
+    width: 124%;
     z-index: 2;
+  }
+  .webring {
+    align-items: center;
+    padding-left: 40px;
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
   }
 }
