@@ -70,9 +70,12 @@ h2 {
   z-index: 3;
 }
 .footer a {
+  background-color: black;
   color: white;
   font-weight: 600;
-  
+}
+.footer p {
+  background-color: black;
 }
 .header {
   height: 20vh;
@@ -168,7 +171,7 @@ h2 {
   color: inherit;
 }
 .sheep-scene {
-  bottom: -6vh;
+  bottom: 0;
   height: 100vh;
   pointer-events: none;
   position: absolute;
