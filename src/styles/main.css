@@ -2,10 +2,12 @@
   font-family: polysans;
   src: url(../fonts/PolySans-Relax.woff2);
 }
+
 @font-face {
   font-family: polysans-slim;
   src: url(../fonts/PolySans-Slim.woff2);
 }
+
 body {
   background-color: rgb(255, 239, 213);
   overflow: hidden;
@@ -45,7 +47,7 @@ h2 {
   pointer-events: none;
 }
 .bento-thumbnail {
-  width: 500px;
+  width: 560px;
   height: auto;
 }
 .centered {
@@ -64,9 +66,13 @@ h2 {
   right: 0;
   margin: 0;
   font-family: polysans-slim;
+  font-size: 1rem;
+  line-height: 1.45;
 }
 .footer a {
   color: white;
+  font-weight: 600;
+  
 }
 .header {
   width: 100%;
@@ -100,16 +106,16 @@ h2 {
   z-index: 3;
 }
 .phone {
-  width:7vw;
+  width: 7vw;
   position: absolute;
-  bottom:0;
+  bottom: 0;
 }
 .phone-container {
-  width:5vw;
-  position:absolute;
+  width: 5vw;
+  position: absolute;
   z-index: 1;
-  top:40%;
-  left:45%;
+  top: 15%;
+  left: 90%;
 }
 #sheep {
   display: none;
@@ -130,8 +136,8 @@ h2 {
   padding-left: 40px;
 }
 .gallery-grid {
-  width: 50%;
-  height: 60vh;
+  width: 58%;
+  height: 64vh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -148,4 +154,200 @@ h2 {
 /* for project heading */
 .your-mom {
   padding-bottom: 20px;
+}
+.visibility {
+  position: absolute;
+  top: 15%;
+  left: 85%;
+  font-family: polysans-slim;
+}
+.gallery-video-tile {
+  padding: 20px;
+}
+.phone-link {
+  color: inherit;
+}
+.sheep-scene {
+  position: absolute;
+  right: 0;
+  bottom: -6vh;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.sheep-boundary {
+  position: absolute;
+  left: 20%;
+  bottom: 0;
+  width: 110%;
+  height: 110%;
+  pointer-events: none;
+}
+
+@media (max-width: 28rem) {
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 100svh;
+    height: auto;
+  }
+
+  h1 {
+    padding-top: clamp(1rem, 3vw, 1.5rem);
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    padding-bottom: 0;
+    font-size: clamp(3rem, 18vw, 4.5rem);
+    line-height: 0.92;
+  }
+
+  .background-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .bento-thumbnail {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+
+  .centered {
+    width: 100%;
+    min-height: 100svh;
+    height: auto;
+  }
+
+  .desc {
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    font-size: clamp(1rem, 4.4vw, 1.15rem);
+  }
+
+  .footer {
+    padding: clamp(1rem, 4vw, 1.25rem);
+    position: relative;
+    z-index: 10;
+    bottom: auto;
+    right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .footer p {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .header {
+    height: auto;
+    min-height: auto;
+  }
+
+  .phone {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .phone-container {
+    width: clamp(2.75rem, 12vw, 3.5rem);
+    position: relative;
+    z-index: 10;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin-left: auto;
+    margin-top: clamp(0.5rem, 3vw, 0.75rem);
+  }
+
+  .phone-link {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .subheading {
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .gallery {
+    padding: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .greeting {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .projects-gallery {
+    position: relative;
+    z-index: 10;
+    padding: 1rem clamp(1rem, 4vw, 1.5rem) clamp(2rem, 6vw, 3rem);
+  }
+
+  .gallery-grid {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    gap: 1rem;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  .your-mom {
+    padding-bottom: 1rem;
+    font-size: clamp(1rem, 4.6vw, 1.15rem);
+    line-height: 1.35;
+  }
+
+  .visibility {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    margin-top: 0.9rem;
+    margin-bottom: 1.35rem;
+    padding-left: clamp(1rem, 4vw, 1.5rem);
+    font-size: clamp(0.95rem, 4vw, 1.05rem);
+    z-index: 10;
+  }
+
+  .gallery-video-tile {
+    padding: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  .sheep-image {
+    position: absolute;
+    z-index: 3;
+    width: clamp(3.25rem, 16vw, 4.5rem);
+    height: auto;
+  }
+
+  .sheep-scene {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(10rem, 42vw, 13.5rem);
+    margin-top: clamp(1rem, 4vw, 1.5rem);
+    overflow: hidden;
+  }
+
+  .sheep-boundary {
+    position: absolute;
+    left: -8%;
+    bottom: -42%;
+    width: 124%;
+    height: auto;
+    aspect-ratio: 1700 / 1226;
+    z-index: 2;
+  }
 }

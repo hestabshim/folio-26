@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
+    const scene = document.querySelector<HTMLElement>(".sheep-scene");
     const boundaryPath = document.querySelector<SVGPathElement>("#sheep-boundary-path");
-    if (!boundaryPath) return;
+    if (!scene || !boundaryPath) return;
   
     const SHEEP_RADIUS = 20;
   
@@ -14,11 +15,12 @@ window.addEventListener("load", () => {
       const points: [number, number][] = [];
       const ctm = pathElement.getScreenCTM();
       if (!ctm) return [];
+      const sceneRect = scene.getBoundingClientRect();
   
       for (let i = 0; i <= samples; i++) {
         const svgPoint = pathElement.getPointAtLength((i / samples) * totalLength);
         const screenPoint = svgPoint.matrixTransform(ctm);
-        points.push([screenPoint.x, screenPoint.y]);
+        points.push([screenPoint.x - sceneRect.left, screenPoint.y - sceneRect.top]);
       }
   
       return points;
@@ -103,7 +105,6 @@ window.addEventListener("load", () => {
       const EAT_SRC = element.dataset.eatSrc ?? GIF_SRC;
   
       element.src = STILL_SRC;
-      element.style.position = "absolute";
   
       function setMoving(moving: boolean) {
         if (moving === isMoving) return;
@@ -282,8 +283,17 @@ window.addEventListener("load", () => {
     // --- Click handler ---
   
     document.addEventListener("click", (e) => {
-      let x = e.clientX;
-      let y = e.clientY;
+      const sceneRect = scene.getBoundingClientRect();
+      const isInsideScene =
+        e.clientX >= sceneRect.left &&
+        e.clientX <= sceneRect.right &&
+        e.clientY >= sceneRect.top &&
+        e.clientY <= sceneRect.bottom;
+
+      if (!isInsideScene) return;
+
+      let x = e.clientX - sceneRect.left;
+      let y = e.clientY - sceneRect.top;
   
       if (!isInsideBoundary(x, y)) {
         [x, y] = clampToBoundary(x, y);
